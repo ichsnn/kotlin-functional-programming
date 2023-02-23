@@ -46,6 +46,15 @@ fun main() {
   message()
   printMessage("Hello World!")
   println(messageLenght("Hello World!"))
+
+  printResult(10, sumOp)
+}
+
+var sumOp: (Int) -> Int = { value -> value + value }
+
+inline fun printResult(value: Int, sumOp: (Int) -> Int) {
+  val result = sumOp(value)
+  println(result)
 }
 
 val message = { println("Hello Form Lambda") }
