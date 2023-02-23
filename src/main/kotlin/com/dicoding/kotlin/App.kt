@@ -1,5 +1,7 @@
 package com.dicoding.kotlin
 
+var msg2 = "Kotlin"
+
 fun main() {
   val fullName1 = getFullName(first = "Kotlin", middle = "is", last = "Awesome")
   val fullName2 = getFullName(middle = "is", first = "Kotlin", last = "Awesome")
@@ -68,7 +70,22 @@ fun main() {
     val message = "$it kotlin"
     println(message)
   }
+
+  // function references
+  val numbers = 1.rangeTo(10)
+  val evenNumber = numbers.filter(::isEvenNumber)
+  println(evenNumber)
+
+  // property references
+  println(::msg2.name)
+  println(::msg2.get())
+
+  ::msg2.set("Kotlin Academy")
+
+  println(::msg2.get())
 }
+
+fun isEvenNumber(number: Int) = number % 2 == 0
 
 fun buildString(action: StringBuilder.() -> Unit): String {
   val stringBuilder = StringBuilder()
