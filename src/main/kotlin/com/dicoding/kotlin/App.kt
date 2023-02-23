@@ -55,6 +55,19 @@ fun main() {
     append("Lambda ")
   }
   println(msg)
+
+  // lambda receiver (this): run, with, apply
+  val buildStr = StringBuilder().apply {
+    append("Hello ")
+    append("Kotlin ")
+  }
+
+  // lambda argument (it): it, also
+  val text = "Hello"
+  text.let {
+    val message = "$it kotlin"
+    println(message)
+  }
 }
 
 fun buildString(action: StringBuilder.() -> Unit): String {
