@@ -42,6 +42,27 @@ fun main() {
   println(multiplyResult)
 
   sum?.invoke(10, 20)
+
+  message()
+  printMessage("Hello World!")
+  println(messageLenght("Hello World!"))
+}
+
+val message = { println("Hello Form Lambda") }
+
+val printMessage = { message: String -> println(message) }
+
+val messageLenght = { message: String -> message.length }
+
+// val comparator = object : Runnable{
+//   override fun run() {
+//     TODO("Not yet implemented")
+//   }
+// }
+
+// with lambda i can simplify the code above with
+val comparator = Runnable {
+  // TODO
 }
 
 typealias Arithmetic = (Int, Int) -> Int?
