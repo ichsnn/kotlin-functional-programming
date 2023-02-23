@@ -48,6 +48,19 @@ fun main() {
   println(messageLenght("Hello World!"))
 
   printResult(10, sumOp)
+
+  val msg = buildString {
+    append("Hello ")
+    append("from ")
+    append("Lambda ")
+  }
+  println(msg)
+}
+
+fun buildString(action: StringBuilder.() -> Unit): String {
+  val stringBuilder = StringBuilder()
+  stringBuilder.action()
+  return stringBuilder.toString()
 }
 
 var sumOp: (Int) -> Int = { value -> value + value }
